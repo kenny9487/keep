@@ -5,55 +5,59 @@ export default function App() {
   // 預設模板資料
   const initialTemplates = [
     {
-      id: 't-1',
-      name: '💼 日常上班',
+      id: 't-1783876480184',
+      name: '✈️ 小琉球三天兩夜',
       items: [
         {
-          id: 'c-1',
+          id: 'c-1783867515481',
           isCategory: true,
-          name: '隨身物品',
+          name: '衣物沐浴',
           isExpanded: true,
           subItems: [
-            { id: 'i-1', name: '鑰匙', quantity: 1, checked: false },
-            { id: 'i-2', name: '錢包', quantity: 1, checked: false },
-            { id: 'i-3', name: '手機', quantity: 1, checked: false },
+            { id: 'i-1783866479701', name: '衣服', quantity: 4, checked: false },
+            { id: 'i-1783866482002', name: '褲子', quantity: 4, checked: false },
+            { id: 'i-1783866486509', name: '內褲', quantity: 4, checked: false },
+            { id: 'i-1783866488942', name: '內衣', quantity: 4, checked: false },
+            { id: 'i-1783866491962', name: '襪子', quantity: 4, checked: false },
+            { id: 'i-1783866509067', name: '浴巾', quantity: 1, checked: false },
+            { id: 'i-1783866514370', name: '毛巾', quantity: 1, checked: false },
+            { id: 'i-1783866559425', name: '洗面乳', quantity: 1, checked: false },
+            { id: 'i-1783866565427', name: '沐浴用品', quantity: 1, checked: false },
+            { id: 'i-1783866570403', name: '牙刷牙膏', quantity: 1, checked: false }
           ]
         },
         {
-          id: 'c-2',
-          isCategory: true,
-          name: '工作裝備',
-          isExpanded: true,
-          subItems: [
-            { id: 'i-4', name: '筆記型電腦', quantity: 1, checked: false },
-            { id: 'i-5', name: '識別證', quantity: 1, checked: false },
-          ]
-        }
-      ]
-    },
-    {
-      id: 't-2',
-      name: '✈️ 國內兩天一夜',
-      items: [
-        {
-          id: 'c-3',
-          isCategory: true,
-          name: '衣物與盥洗',
-          isExpanded: true,
-          subItems: [
-            { id: 'i-6', name: '換洗衣物', quantity: 2, checked: false },
-            { id: 'i-7', name: '內衣褲', quantity: 2, checked: false },
-            { id: 'i-10', name: '牙刷/牙膏', quantity: 1, checked: false },
-          ]
-        },
-        {
-          id: 'c-4',
+          id: 'c-1783867534086',
           isCategory: true,
           name: '電子產品',
           isExpanded: true,
           subItems: [
-            { id: 'i-8', name: '行動電源', quantity: 1, checked: false },
-            { id: 'i-9', name: '充電線', quantity: 2, checked: false },
+            { id: 'i-1783867541194', name: '手機', quantity: 1, checked: false },
+            { id: 'i-1783867544322', name: '平板', quantity: 1, checked: false },
+            { id: 'i-1783867548676', name: '相機', quantity: 1, checked: false },
+            { id: 'i-1783867552298', name: '相機電池', quantity: 3, checked: false },
+            { id: 'i-1783867560697', name: '記憶卡', quantity: 2, checked: false },
+            { id: 'i-1783867573391', name: '記憶卡盒', quantity: 1, checked: false },
+            { id: 'i-1783867585898', name: '充電器', quantity: 1, checked: false },
+            { id: 'i-1783867640030', name: 'Lighting 線', quantity: 1, checked: false },
+            { id: 'i-1783867662320', name: 'type c 線', quantity: 1, checked: false },
+            { id: 'i-1783867668224', name: '手錶充電線', quantity: 1, checked: false },
+            { id: 'i-1783867848107', name: '長自拍棒', quantity: 1, checked: false },
+            { id: 'i-1783867854480', name: '短自拍棒', quantity: 1, checked: false },
+            { id: 'i-1783867858198', name: '防水殼', quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: 'c-1783868460456',
+          isCategory: true,
+          name: '證件鑰匙',
+          isExpanded: true,
+          subItems: [
+            { id: 'i-1783868469266', name: '車鑰匙', quantity: 1, checked: false },
+            { id: 'i-1783868473454', name: '家鑰匙', quantity: 1, checked: false },
+            { id: 'i-1783868477815', name: '身分證', quantity: 1, checked: false },
+            { id: 'i-1783868481134', name: '健保卡', quantity: 1, checked: false },
+            { id: 'i-1783868517585', name: '錢包', quantity: 1, checked: false }
           ]
         }
       ]
@@ -134,7 +138,6 @@ export default function App() {
 
   // 切換項目勾選狀態
   const toggleCheck = (id, parentId = null) => {
-    // 若在批次整理模式中，點擊獨立項目則切換其批次選取狀態
     if (isBatchMode && !parentId) {
       toggleBatchSelect(id);
       return;
@@ -173,7 +176,7 @@ export default function App() {
     }
   };
 
-  // 切換模式的輔助函數 (確保兩種模式不會同時開啟)
+  // 切換模式的輔助函數
   const toggleBatchMode = () => {
     setIsBatchMode(!isBatchMode);
     if (!isBatchMode) setIsSortMode(false);
@@ -189,7 +192,6 @@ export default function App() {
   const executeBatchMove = (targetCategoryId) => {
     const itemsToMove = currentItems.filter(item => batchSelectedIds.includes(item.id));
     setCurrentItems(prev => {
-      // 移除原有的獨立項目，並將它們加入目標分類中
       const updatedItems = prev.map(item => {
         if (item.id === targetCategoryId) {
           return { ...item, subItems: [...item.subItems, ...itemsToMove], isExpanded: true };
@@ -241,7 +243,6 @@ export default function App() {
       ));
     } else {
       setCurrentItems(currentItems.filter(item => item.id !== id));
-      // 如果該項目正在被批次選取，一併從批次選取名單中移除
       if (batchSelectedIds.includes(id)) {
         setBatchSelectedIds(prev => prev.filter(itemId => itemId !== id));
       }
@@ -284,7 +285,7 @@ export default function App() {
 
   // 啟動編輯模式
   const startEdit = (id, currentName, parentId = null) => {
-    if (isBatchMode && !parentId) return; // 批次模式下禁止編輯獨立項目名稱
+    if (isBatchMode && !parentId) return;
     setEditingId(id);
     setEditName(currentName);
     setEditingParentId(parentId);
@@ -503,7 +504,7 @@ export default function App() {
         )}
 
         {/* 勾選按鈕與名稱/編輯框 */}
-        <div className="flex items-center flex-1 mr-4 overflow-hidden">
+        <div className="flex items-center flex-1 mr-4 overflow-hidden pointer-events-none sm:pointer-events-auto">
           {isBatchMode && isIndependent ? (
             <div className="mr-4 flex-shrink-0 text-blue-500">
               {isBatchSelected ? <CheckSquare size={26} /> : <Square size={26} className="text-slate-300" />}
@@ -522,7 +523,7 @@ export default function App() {
           )}
           
           {editingId === item.id ? (
-            <div className="flex items-center flex-1 min-w-0 gap-2" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center flex-1 min-w-0 gap-2 pointer-events-auto" onClick={e => e.stopPropagation()}>
               <input 
                 type="text"
                 value={editName}
@@ -541,7 +542,7 @@ export default function App() {
               </button>
             </div>
           ) : (
-            <div className="flex items-center flex-1 min-w-0 group">
+            <div className="flex items-center flex-1 min-w-0 group pointer-events-auto">
               <span className={`text-lg font-medium truncate transition-all ${item.checked && !isBatchMode ? 'line-through text-slate-400' : 'text-slate-700'}`}>
                 {item.name}
               </span>
@@ -714,7 +715,6 @@ export default function App() {
                 placeholder="新增獨立準備物品..."
                 className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               />
-              {/* 補回數量輸入框與新增按鈕 */}
               <div className="flex items-center bg-white border border-slate-200 rounded-xl px-2 hidden sm:flex">
                 <span className="text-sm text-slate-400 mr-2 ml-2">數量</span>
                 <input
