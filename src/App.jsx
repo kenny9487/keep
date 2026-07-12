@@ -4,7 +4,6 @@ import { CheckCircle2, Circle, Plus, Minus, Trash2, Save, FolderOpen, X, Edit2, 
 export default function App() {
   // 預設模板資料
   const initialTemplates = [
-    [
   {
     "id": "t-1783877970485",
     "name": "✈️ 小琉球三天兩夜",
@@ -299,7 +298,7 @@ export default function App() {
       }
     ]
   }
-]
+];
 
   // 狀態管理
   const [templates, setTemplates] = useState(initialTemplates);
