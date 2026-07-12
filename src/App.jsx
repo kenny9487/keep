@@ -4,301 +4,101 @@ import { CheckCircle2, Circle, Plus, Minus, Trash2, Save, FolderOpen, X, Edit2, 
 export default function App() {
   // 預設模板資料
   const initialTemplates = [
-  {
-    "id": "t-1783877970485",
-    "name": "✈️ 小琉球三天兩夜",
-    "items": [
-      {
-        "id": "c-1783867515481",
-        "isCategory": true,
-        "name": "衣物沐浴",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783866479701",
-            "name": "衣服",
-            "quantity": 4,
-            "checked": false
-          },
-          {
-            "id": "i-1783866482002",
-            "name": "褲子",
-            "quantity": 4,
-            "checked": false
-          },
-          {
-            "id": "i-1783866486509",
-            "name": "內褲",
-            "quantity": 4,
-            "checked": false
-          },
-          {
-            "id": "i-1783866488942",
-            "name": "內衣",
-            "quantity": 4,
-            "checked": false
-          },
-          {
-            "id": "i-1783866491962",
-            "name": "襪子",
-            "quantity": 4,
-            "checked": false
-          },
-          {
-            "id": "i-1783866509067",
-            "name": "浴巾",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783866514370",
-            "name": "毛巾",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783866559425",
-            "name": "洗面乳",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783866565427",
-            "name": "沐浴用品",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783866570403",
-            "name": "牙刷牙膏",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      },
-      {
-        "id": "c-1783867534086",
-        "isCategory": true,
-        "name": "電子產品",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783867541194",
-            "name": "手機",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867544322",
-            "name": "平板",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867548676",
-            "name": "相機",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867552298",
-            "name": "相機電池",
-            "quantity": 3,
-            "checked": false
-          },
-          {
-            "id": "i-1783867560697",
-            "name": "記憶卡",
-            "quantity": 2,
-            "checked": false
-          },
-          {
-            "id": "i-1783867573391",
-            "name": "記憶卡盒",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867585898",
-            "name": "充電器",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867640030",
-            "name": "Lighting 線",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867662320",
-            "name": "type c 線",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867668224",
-            "name": "手錶充電線",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867848107",
-            "name": "長自拍棒",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867854480",
-            "name": "短自拍棒",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783867858198",
-            "name": "防水殼",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      },
-      {
-        "id": "c-1783868460456",
-        "isCategory": true,
-        "name": "證件鑰匙",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783868469266",
-            "name": "車鑰匙",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783868473454",
-            "name": "家鑰匙",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783868477815",
-            "name": "身分證",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783868481134",
-            "name": "健保卡",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783868517585",
-            "name": "錢包",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      },
-      {
-        "id": "c-1783877706196",
-        "isCategory": true,
-        "name": "餐具",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783877711139",
-            "name": "保鮮盒",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877722346",
-            "name": "餐具組",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877725901",
-            "name": "水壺",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      },
-      {
-        "id": "c-1783877866825",
-        "isCategory": true,
-        "name": "衛生紙食物藥物",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783877833533",
-            "name": "衛生紙",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877836263",
-            "name": "濕紙巾",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877839126",
-            "name": "泡麵",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877845216",
-            "name": "暈船藥",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      },
-      {
-        "id": "c-1783877877541",
-        "isCategory": true,
-        "name": "裝備",
-        "isExpanded": false,
-        "subItems": [
-          {
-            "id": "i-1783877752629",
-            "name": "泳衣",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877759737",
-            "name": "泳褲",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877774324",
-            "name": "水母衣",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877806398",
-            "name": "面鏡",
-            "quantity": 1,
-            "checked": false
-          },
-          {
-            "id": "i-1783877815262",
-            "name": "呼吸管",
-            "quantity": 1,
-            "checked": false
-          }
-        ]
-      }
-    ]
-  }
-];
+    {
+      id: "t-1783877970485",
+      name: "✈️ 小琉球三天兩夜",
+      items: [
+        {
+          id: "c-1783867515481",
+          isCategory: true,
+          name: "衣物沐浴",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783866479701", name: "衣服", quantity: 4, checked: false },
+            { id: "i-1783866482002", name: "褲子", quantity: 4, checked: false },
+            { id: "i-1783866486509", name: "內褲", quantity: 4, checked: false },
+            { id: "i-1783866488942", name: "內衣", quantity: 4, checked: false },
+            { id: "i-1783866491962", name: "襪子", quantity: 4, checked: false },
+            { id: "i-1783866509067", name: "浴巾", quantity: 1, checked: false },
+            { id: "i-1783866514370", name: "毛巾", quantity: 1, checked: false },
+            { id: "i-1783866559425", name: "洗面乳", quantity: 1, checked: false },
+            { id: "i-1783866565427", name: "沐浴用品", quantity: 1, checked: false },
+            { id: "i-1783866570403", name: "牙刷牙膏", quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: "c-1783867534086",
+          isCategory: true,
+          name: "電子產品",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783867541194", name: "手機", quantity: 1, checked: false },
+            { id: "i-1783867544322", name: "平板", quantity: 1, checked: false },
+            { id: "i-1783867548676", name: "相機", quantity: 1, checked: false },
+            { id: "i-1783867552298", name: "相機電池", quantity: 3, checked: false },
+            { id: "i-1783867560697", name: "記憶卡", quantity: 2, checked: false },
+            { id: "i-1783867573391", name: "記憶卡盒", quantity: 1, checked: false },
+            { id: "i-1783867585898", name: "充電器", quantity: 1, checked: false },
+            { id: "i-1783867640030", name: "Lighting 線", quantity: 1, checked: false },
+            { id: "i-1783867662320", name: "type c 線", quantity: 1, checked: false },
+            { id: "i-1783867668224", name: "手錶充電線", quantity: 1, checked: false },
+            { id: "i-1783867848107", name: "長自拍棒", quantity: 1, checked: false },
+            { id: "i-1783867854480", name: "短自拍棒", quantity: 1, checked: false },
+            { id: "i-1783867858198", name: "防水殼", quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: "c-1783868460456",
+          isCategory: true,
+          name: "證件鑰匙",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783868469266", name: "車鑰匙", quantity: 1, checked: false },
+            { id: "i-1783868473454", name: "家鑰匙", quantity: 1, checked: false },
+            { id: "i-1783868477815", name: "身分證", quantity: 1, checked: false },
+            { id: "i-1783868481134", name: "健保卡", quantity: 1, checked: false },
+            { id: "i-1783868517585", name: "錢包", quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: "c-1783877706196",
+          isCategory: true,
+          name: "餐具",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783877711139", name: "保鮮盒", quantity: 1, checked: false },
+            { id: "i-1783877722346", name: "餐具組", quantity: 1, checked: false },
+            { id: "i-1783877725901", name: "水壺", quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: "c-1783877866825",
+          isCategory: true,
+          name: "衛生紙食物藥物",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783877833533", name: "衛生紙", quantity: 1, checked: false },
+            { id: "i-1783877836263", name: "濕紙巾", quantity: 1, checked: false },
+            { id: "i-1783877839126", name: "泡麵", quantity: 1, checked: false },
+            { id: "i-1783877845216", name: "暈船藥", quantity: 1, checked: false }
+          ]
+        },
+        {
+          id: "c-1783877877541",
+          isCategory: true,
+          name: "裝備",
+          isExpanded: false,
+          subItems: [
+            { id: "i-1783877752629", name: "泳衣", quantity: 1, checked: false },
+            { id: "i-1783877759737", name: "泳褲", quantity: 1, checked: false },
+            { id: "i-1783877774324", name: "水母衣", quantity: 1, checked: false },
+            { id: "i-1783877806398", name: "面鏡", quantity: 1, checked: false },
+            { id: "i-1783877815262", name: "呼吸管", quantity: 1, checked: false }
+          ]
+        }
+      ]
+    }
+  ];
 
   // 狀態管理
   const [templates, setTemplates] = useState(initialTemplates);
@@ -712,7 +512,7 @@ export default function App() {
         onClick={() => {
           if (isBatchMode && isIndependent) toggleBatchSelect(item.id);
         }}
-        className={`flex items-center justify-between p-4 rounded-2xl transition-all duration-200 border ${
+        className={`flex items-center justify-between p-3 sm:p-4 rounded-2xl transition-all duration-200 border ${
           isBatchSelected ? 'bg-blue-50 border-blue-300 shadow-md ring-2 ring-blue-100' :
           item.checked 
             ? 'bg-slate-50 border-slate-100 opacity-60' 
@@ -721,74 +521,74 @@ export default function App() {
       >
         {/* 排序控制 (僅在排序模式開啟時顯示) */}
         {isSortMode && (
-          <div className={`flex flex-col mr-3 ${item.checked ? 'opacity-30 pointer-events-none' : 'text-slate-400'}`}>
+          <div className={`flex flex-col mr-2 sm:mr-3 ${item.checked ? 'opacity-30 pointer-events-none' : 'text-slate-400'}`}>
             <button 
               onClick={(e) => { e.stopPropagation(); moveItem(index, -1, parentId); }}
               className="p-1 hover:text-blue-600 hover:bg-blue-50 rounded disabled:opacity-30 transition-colors"
               title="向上移動"
             >
-              <ChevronUp size={18} />
+              <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button 
               onClick={(e) => { e.stopPropagation(); moveItem(index, 1, parentId); }}
               className="p-1 hover:text-blue-600 hover:bg-blue-50 rounded disabled:opacity-30 transition-colors"
               title="向下移動"
             >
-              <ChevronDown size={18} />
+              <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         )}
 
-        {/* 勾選按鈕與名稱/編輯框 */}
-        <div className="flex items-center flex-1 mr-4 overflow-hidden pointer-events-none sm:pointer-events-auto">
+        {/* 勾選按鈕與名稱/編輯框 (修復手機版無法點擊的問題) */}
+        <div className="flex items-center flex-1 mr-2 sm:mr-4 overflow-hidden">
           {isBatchMode && isIndependent ? (
-            <div className="mr-4 flex-shrink-0 text-blue-500">
-              {isBatchSelected ? <CheckSquare size={26} /> : <Square size={26} className="text-slate-300" />}
+            <div className="mr-2 sm:mr-4 flex-shrink-0 text-blue-500">
+              {isBatchSelected ? <CheckSquare className="w-5 h-5 sm:w-6 sm:h-6" /> : <Square className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300" />}
             </div>
           ) : (
             <button 
               onClick={(e) => { e.stopPropagation(); toggleCheck(item.id, parentId); }}
-              className="mr-4 flex-shrink-0"
+              className="mr-2 sm:mr-4 flex-shrink-0"
             >
               {item.checked ? (
-                <CheckCircle2 size={26} className="text-green-500" />
+                <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
               ) : (
-                <Circle size={26} className="text-slate-300" />
+                <Circle className="w-5 h-5 sm:w-6 sm:h-6 text-slate-300" />
               )}
             </button>
           )}
           
           {editingId === item.id ? (
-            <div className="flex items-center flex-1 min-w-0 gap-2 pointer-events-auto" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center flex-1 min-w-0 gap-1 sm:gap-2" onClick={e => e.stopPropagation()}>
               <input 
                 type="text"
                 value={editName}
                 onChange={(e) => setEditName(e.target.value)}
                 onBlur={() => saveEdit(item.id, parentId)}
                 onKeyDown={(e) => e.key === 'Enter' && saveEdit(item.id, parentId)}
-                className="flex-1 bg-slate-50 border border-slate-300 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 bg-slate-50 border border-slate-300 rounded-lg px-2 sm:px-3 py-1 sm:py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                 autoFocus
               />
               <button 
                 onMouseDown={(e) => { e.preventDefault(); saveEdit(item.id, parentId); }}
-                className="p-1.5 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                className="p-1 sm:p-1.5 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
                 title="確認儲存"
               >
-                <Check size={20} />
+                <Check className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           ) : (
-            <div className="flex items-center flex-1 min-w-0 group pointer-events-auto">
-              <span className={`text-lg font-medium truncate transition-all ${item.checked && !isBatchMode ? 'line-through text-slate-400' : 'text-slate-700'}`}>
+            <div className="flex items-center flex-1 min-w-0 group">
+              <span className={`text-base sm:text-lg font-medium truncate transition-all ${item.checked && !isBatchMode ? 'line-through text-slate-400' : 'text-slate-700'}`}>
                 {item.name}
               </span>
               {!item.checked && (!isBatchMode || !isIndependent) && (
                 <button 
                   onClick={(e) => { e.stopPropagation(); startEdit(item.id, item.name, parentId); }}
-                  className="ml-2 p-1.5 text-slate-400 opacity-0 group-hover:opacity-100 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                  className="ml-1 sm:ml-2 p-1 sm:p-1.5 text-slate-400 opacity-0 group-hover:opacity-100 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                   title="修改名稱"
                 >
-                  <Edit2 size={16} />
+                  <Edit2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
               )}
             </div>
@@ -796,30 +596,30 @@ export default function App() {
         </div>
 
         {/* 數量控制與刪除 */}
-        <div className={`flex items-center gap-3 flex-shrink-0 ${isBatchMode && isIndependent ? 'opacity-30 pointer-events-none' : ''}`}>
-          <div className={`flex items-center bg-slate-100 rounded-lg p-1 ${(item.checked && !isBatchMode) ? 'pointer-events-none' : ''}`}>
+        <div className={`flex items-center gap-1.5 sm:gap-3 flex-shrink-0 ${isBatchMode && isIndependent ? 'opacity-30 pointer-events-none' : ''}`}>
+          <div className={`flex items-center bg-slate-100 rounded-md sm:rounded-lg p-0.5 sm:p-1 ${(item.checked && !isBatchMode) ? 'pointer-events-none' : ''}`}>
             <button 
               onClick={(e) => { e.stopPropagation(); updateQuantity(item.id, -1, parentId); }}
-              className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-md transition-colors"
+              className="p-1 sm:p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-md transition-colors"
               disabled={item.quantity <= 1}
             >
-              <Minus size={16} />
+              <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
-            <span className="w-8 text-center font-semibold text-slate-700">
+            <span className="w-6 sm:w-8 text-center text-sm sm:text-base font-semibold text-slate-700">
               {item.quantity}
             </span>
             <button 
               onClick={(e) => { e.stopPropagation(); updateQuantity(item.id, 1, parentId); }}
-              className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-md transition-colors"
+              className="p-1 sm:p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-200 rounded-md transition-colors"
             >
-              <Plus size={16} />
+              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </div>
           <button 
             onClick={(e) => { e.stopPropagation(); deleteItem(item.id, parentId); }}
-            className="p-2 text-red-400 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors"
+            className="p-1.5 sm:p-2 text-red-400 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors"
           >
-            <Trash2 size={20} />
+            <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
       </div>
